@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <h3>INDIAFOSS 2025</h3><h1>Speaker Poster Generator</h1>
+
+  <div class="main-section">
+    <div class="input-section">
+      <div class="form-section">
+        <label>Talk Category:</label>
+        <select id="category" onchange="updatePreview()">
+          <option>Talk</option>
+          <option>Lightning Talk</option>
+          <option>Workshop</option>
+          <option>Devroom Session</option>
+          <option>BOF Session</option>
+          <option>Panel Discussion</option>
+        </select>
+
+        <label>Talk Title:</label>
+        <input type="text" id="title" oninput="updatePreview()">
+
+        <label>Speaker's Name:</label>
+        <input type="text" id="name" oninput="updatePreview()">
+
+        <label>Designation:</label>
+        <input type="text" id="designation" oninput="updatePreview()">
+
+        <div class="color-slider-label">
+          <label>Card Color Theme:</label>
+          <div class="color-preview" id="colorPreview"></div>
+        </div>
+        <div class="color-slider-container">
+          <input type="range" id="colorSlider" class="color-slider" min="0" max="360" value="0" oninput="updateCardColor()">
+          <button type="button" class="reset-color-btn" onclick="resetCardColor()">Black</button>
+        </div>
+
+        <label>Profile Picture (Use square transparent PNG):</label>
+        <input class="imgbutton" type="file" accept="image/*" onchange="loadImage(event)">
+      </div>
+
+      <div class="button-group">
+        <button onclick="downloadImage('png')">Download as PNG</button>
+        <button onclick="downloadImage('jpeg')">Download as JPEG</button>
+      </div>
+    </div>
+
+    <div id="preview-wrapper">
+      <div id="preview">
+        
+        <div class="header-text">
+          <h1>I am Speaking at </h1>
+          
+          <h2>India's largest FOSS conference</h2>
+        </div>
+
+      
+        
+         <div class="content-section">
+                <!-- Talk Information -->
+                <div class="talk-info">
+                    <div class="talk-category" id="categorybg">
+                        <span class="talk-category-text" id="previewCategory">Talk Category</span>
+                    </div>
+                    <h1 class="talk-title" id="previewTitle">The Talk Title goes here ...</h1>
+                </div>
+
+                <!-- Speaker Section -->
+                <div class="cards2">
+                <div class="speaker-section">
+                    <div class="speaker-card" id="speakerCard">
+                    <img src="" id="profileImg" class="profile-pic" alt="Profile Image">
+                    <div class="shadowfront"></div>
+                    </div>
+                </div>
+                <div class="speaker-section">
+                    <div class="speaker-card" id="speakerCard2">
+                        <div class="speaker-details">
+                            <div class="speaker-name" id="previewName">Speaker Name</div>
+                            <div class="speaker-designation" id="previewDesignation">Designation of the person</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+          </div>
+
+        <div class="footer">
+          <div class="event-logo">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 931.49 319.06">
+              <defs>
+                <style>
+                  .cls-1 {
+                    fill-rule: evenodd;
+                  }
+
+                  .cls-1, .cls-2 {
+                    fill: #1a1a1a;
+                  }
+
+                  .cls-3 {
+                    fill: #fff;
+                  }
+                </style>
+              </defs>
+              <path class="cls-2" d="m253.79,186.07h26.01v-77.13h-26.01v77.13Zm-27.51,26.8V82.26h67.69v12.96h13.4v104.54h-13.4v13.07h-67.69v.04Z"/>
+              <path class="cls-2" d="m110.13,82.26h-29.23v130.07h29.23V82.26Z"/>
+              <path class="cls-2" d="m354.08,82.26h-29.23v130.07h29.23V82.26Z"/>
+              <path class="cls-2" d="m155.19,212.83h-27.54V82.26h81.05v130.57h-27.54v-103.89h-26.01v103.89h.04Z"/>
+              <path class="cls-1" d="m371.59,212.83h27.5v-51.92h26.01v51.92h27.5V82.26h-81.05v130.57h.04Zm53.55-80.2v-23.68h-26.01v23.68h26.01Z"/>
+              <path class="cls-2" d="m532.43,212.83h-27.58V82.26h67.81v26.69h-40.23v25.24h40.23v26.69h-40.23v52-.04Z"/>
+              <path class="cls-2" d="m587.1,82.26v130.57h81.2V82.26h-81.2Zm53.62,103.81h-26.08v-77.13h26.08v77.13Z"/>
+              <path class="cls-2" d="m767.02,108.94v-26.69h-81.2v78.57h53.66v25.24h-53.66v26.76h81.2v-78.68h-53.62v-25.2h53.62Z"/>
+              <path class="cls-2" d="m865.78,108.94v-26.69h-81.2v78.57h53.62v25.24h-53.62v26.76h81.2v-78.68h-53.62v-25.2h53.62Z"/>
+              <path class="cls-1" d="m931.49,21.83v250.99h-65.07v-27.89h37.18V49.72H43.72v195.22h562.41v27.89H15.84v-27.89h0V49.72h0v-27.89h915.66Z"/>
+              <g>
+                <path class="cls-2" d="m676.16,244.81h-47.08v19.01h28.07v9.05h-28.07v46.18h47.08v-18.11h-28.07v-9.96h28.07v-46.18Z"/>
+                <path class="cls-2" d="m741.36,244.81v19.01h27.16v9.05h-27.16v46.18h46.18v-18.11h-28.07v-9.96h28.07v-46.18h-46.18Z"/>
+                <path class="cls-2" d="m842.76,262.92v-18.11h-46.18v46.18h28.07v9.05h-28.07v19.01h28.07s18.11,0,18.11,0h0s0,0,0,0v-46.18h-27.16v-9.96h27.16Z"/>
+                <path class="cls-2" d="m731.39,244.81h-46.18v74.25h46.18v-74.25Zm-28.07,56.14v-37.12h9.96v37.12h-9.96Z"/>
+              </g>
+              <g>
+                <polygon class="cls-2" points="281.58 0 277.78 0 267.46 0 262.92 0 252.91 0 248.94 0 241.07 0 236.8 0 92.69 0 88.55 0 85.63 0 0 0 0 58.06 6.8 70.29 90.79 70.29 92.69 70.27 288.25 70.27 288.4 12.23 281.58 0"/>
+                <path class="cls-3" d="m99.63,26.17h17.25v28.72h-5.85v-22.84h-5.55v22.84h-5.85v-28.72ZM4.27,12.76v19.06h32.47v14.09h-19.87v-4.2H4.27v13.14h45.12v-10.84h-.02v-12.19h.02v-8.94H16.91v-10.12h32.49V4.28H4.27v8.48Zm73.51,42.12h5.85v-22.84h5.55v22.84h5.85v-28.72h-17.25v28.72Zm.51-33.4h4.39V4.28h-4.39v5.86h-4.03v-5.86h-4.39v17.21h4.39v-6.96h4.03v6.96Zm-19.02,0h4.39v-12.82h4.75v-4.39h-13.53v4.39h4.39v12.82Zm-3.34,4.66h17.25v28.72h-5.85v-11.43h-5.55v11.43h-5.85v-28.72Zm5.85,11.43h5.55v-5.55h-5.55v5.55Zm81.54,8.54h-2.85v2.85h-2.7v-22.82h-5.85v28.72h11.55v-2.87h2.85v-2.85h2.85v-22.97h-5.85v19.95Zm94.99-19.93h17.25v12.89h-4.14v4.22h4.14v11.6h-5.85v-11.43h-5.55v11.43h-5.85v-28.72Zm5.85,11.41h5.55v-5.55h-5.55v5.55Zm-27.7-11.43h17.25v28.72h-5.85v-11.43h-5.55v11.43h-5.85v-28.72Zm5.85,11.43h5.55v-5.55h-5.55v5.55Zm49.24-11.41v11.41h-5.55v-11.41h-5.85v17.27h5.7v11.43h5.85v-11.43h5.7v-17.27h-5.85Zm-98.79,0h17.25v12.89h-4.14v4.22h4.14v11.6h-5.85v-11.43h-5.55v11.43h-5.85v-28.72Zm5.85,11.41h5.55v-5.55h-5.55v5.55Zm-24.85,17.29h14.4v-5.9h-8.55v-5.55h8.55v-5.86h-8.55v-5.55h8.55v-5.86h-14.4v28.72Zm-32.3,0h5.85v-28.72h-5.85v28.72Zm75.99-28.62h-2.7v2.76h-.15v14.42h11.4v5.55h-11.4v5.9h14.4v-.1h2.85v-17.21h-11.4v-5.55h11.4v-5.86h-14.4v.1Zm71.32-21.98V0h-5.47v4.28h-12.75V0h-5.05v4.28H88.8v11.79h189.7V4.28h-9.71Z"/>
+              </g>
+            </svg>
+          </div>
+          <div class="dates">
+            <h5>19<sup>th</sup> – 21<sup>st</sup> SEPTEMBER 2025 | BENGALURU</h5>
+            <h4>FOSSUNITED.ORG/INDIAFOSS</h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    function updatePreview() {
+      document.getElementById('previewCategory').innerText = document.getElementById('category').value;
+      document.getElementById('previewTitle').innerText = document.getElementById('title').value || "Talk Title goes here...";
+      document.getElementById('previewName').innerText = document.getElementById('name').value || "Speaker name";
+      document.getElementById('previewDesignation').innerText = document.getElementById('designation').value || "";
+    }
+
+    function updateCardColor() {
+      const hue = document.getElementById('colorSlider').value;
+      const speakerCard2 = document.getElementById('speakerCard2');
+      const speakerCard = document.getElementById('speakerCard');
+      const colorPreview = document.getElementById('colorPreview');
+      const previewCategory = document.getElementById('previewCategory');
+      const categorybg = document.getElementById('categorybg');
+      
+      
+      if (hue == 0) {
+        // Default gradient (original design)
+        const defaultGradient = 'linear-gradient(-10deg, rgb(25, 25, 25) 0%, #4e4e4e 100%)';
+        speakerCard2.style.background = defaultGradient;
+        speakerCard.style.background = defaultGradient;
+        colorPreview.style.background = defaultGradient;
+        previewCategory.style.color = `#08b74f`;
+        categorybg.style.background = 'rgba(8, 183, 79, 0.15)';
+      } else {
+        // Create gradient based on hue
+        const lightColor = `hsl(${hue}, 50%, 38%)`;
+        const darkColor = `hsl(${hue}, 60%, 13%)`;
+        
+        // Update speaker card background
+        speakerCard.style.background = `linear-gradient(-10deg, ${darkColor} 0%, ${lightColor} 100%)`;
+        speakerCard2.style.background = `linear-gradient(-10deg, ${darkColor} 0%, ${lightColor} 100%)`;
+        
+        // Update color preview
+        colorPreview.style.background = `linear-gradient(-10deg, ${darkColor} 0%, ${lightColor} 100%)`;
+
+        // Update category color
+        previewCategory.style.color = `${lightColor}`;
+        categorybg.style.background = `hsl(${hue}, 50%, 90%)`;
+      }
+    }
+
+    function resetCardColor() {
+      document.getElementById('colorSlider').value = 0;
+      updateCardColor();
+    }
+
+    function loadImage(event) {
+      const output = document.getElementById('profileImg');
+      if (!event.target.files.length) {
+        // Show default SVG star icon if no image selected
+        output.src = "data:image/svg+xml;utf8," +
+          encodeURIComponent(`<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="64" height="64" fill="#eaeaea"/>
+<path d="M21.3053 11.0879H42.6905V32.473H21.3053V11.0879Z" fill="#fafafa"/>
+<path d="M11.7383 36.9752H52.2575V54.9837H11.7383V36.9752Z" fill="#fafafa"/>
+</svg>`);
+        return;
+      }
+
+      output.src = URL.createObjectURL(event.target.files[0]);
+      output.onload = () => URL.revokeObjectURL(output.src);
+    }
+
+    function downloadImage(type) {
+      const wrapper = document.getElementById('preview-wrapper');
+      const preview = document.getElementById('preview');
+
+      // Temporarily remove scale
+      wrapper.style.transform = 'none';
+
+      // Wait for images to load and apply proper sizing
+      const images = preview.querySelectorAll('img');
+      let imagePromises = [];
+      
+      images.forEach(img => {
+        if (img.src && !img.src.startsWith('data:image/svg')) {
+          imagePromises.push(new Promise((resolve) => {
+            if (img.complete) {
+              resolve();
+            } else {
+              img.onload = resolve;
+              img.onerror = resolve;
+            }
+          }));
+        }
+      });
+
+      html2canvas(preview, {
+        width: 1080,
+        height: 1350,
+        scale: 1
+      }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'speaker-card.' + type;
+        link.href = canvas.toDataURL('image/' + type);
+        link.click();
+
+        // Restore scale after download
+        wrapper.style.transform = 'scale(0.4)';
+      });
+    }
+
+    // Initialize on load
+    window.onload = function () {
+      loadImage({ target: { files: [] } });
+      updateCardColor(); // Set initial color (default)
+    };
+   
+    
+
+  </script>
+
+</body>
+</html>

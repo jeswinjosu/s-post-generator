@@ -203,7 +203,14 @@
         return;
       }
 
-      output.src = URL.createObjectURL(event.target.files[0]);
+      // Fix: image was loaded as blob, now we load it as data URL
+      // which html2canvas can render without triggering blob-related CORS errors.
+      const reader = new FileReader();
+      reader.onload = function(e) {
+          output.src = e.target.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+
       output.onload = () => URL.revokeObjectURL(output.src);
     }
 
